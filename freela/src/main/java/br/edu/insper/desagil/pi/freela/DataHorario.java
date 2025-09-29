@@ -27,13 +27,9 @@ public class DataHorario extends Momento {
         this.data = data;
     }
 
-    public void atualiza(int hora, int minuto){
-        if (hora < 0 | hora >23){
-            ajusta(hora,0,23);
-        }
-        if (minuto<0| minuto>59){
-            ajusta(minuto,0,59);
-        }
+    public void atualiza(int nhora, int nminuto){
+        this.hora = ajusta(nhora,0,23);
+        this.minuto= ajusta(nminuto,0,59);
     }
 
     @Override

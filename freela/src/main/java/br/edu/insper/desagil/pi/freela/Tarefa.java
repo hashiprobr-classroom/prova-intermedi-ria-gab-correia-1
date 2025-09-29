@@ -33,11 +33,10 @@ public class Tarefa {
         this.descricao = descricao;
     }
 
-    public void atualiza(Momento inicio, Momento fim){
-        if (inicio.minuto() > fim.minuto()){
+    public void atualiza(Momento i, Momento f){
+        if (i.minuto() > f.minuto()){
             throw new IllegalArgumentException("INICIO>FIM");
         }
-
     }
 
 }

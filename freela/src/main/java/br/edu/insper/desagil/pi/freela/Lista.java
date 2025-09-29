@@ -22,7 +22,7 @@ public class Lista {
                 break;
             }
         }
-        if (estanalista){
+        if (!estanalista){
             tarefas.add(tarefa);
         }
     }
