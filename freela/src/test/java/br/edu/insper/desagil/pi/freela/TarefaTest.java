@@ -26,6 +26,14 @@ public class TarefaTest {
 
     @Test
     void momentosValidos() {
+        Tarefa t = new Tarefa(3);
+        Momento m1 = mock(Momento.class);
+        when(m1.minuto()).thenReturn(10);
+        Momento m2 = mock(Momento.class);
+        when(m2.minuto()).thenReturn(20);
+        t.atualiza(m1,m2);
+        assertEquals(m1, t.getInicio());
+        assertEquals(m2, t.getFim());
     }
 
     @Test

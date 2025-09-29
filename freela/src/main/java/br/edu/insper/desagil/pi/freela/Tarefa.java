@@ -36,6 +36,9 @@ public class Tarefa {
     public void atualiza(Momento i, Momento f){
         if (i.minuto() > f.minuto()){
             throw new IllegalArgumentException("INICIO>FIM");
+        }else{
+            this.inicio =i;
+            this.fim=f;
         }
     }
 
