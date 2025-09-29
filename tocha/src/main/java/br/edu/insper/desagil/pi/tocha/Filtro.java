@@ -7,6 +7,12 @@ public class Filtro {
         this.tipo = tipo;
     }
 
+    public void alturaPequena(double altura){
+        if (altura < 3) {
+            throw new IllegalStateException("altura pequena");
+        }
+    }
+
     public Imagem processa(Imagem imagem) {
         if (tipo.equals("media")) {
             // inicializa saída
@@ -14,9 +20,8 @@ public class Filtro {
             int[][] entrada = imagem.getPixels();
 
             int altura = entrada.length;
-            if (altura < 3) {
-                throw new IllegalStateException("altura pequena");
-            }
+
+            alturaPequena(altura);
 
             int largura = entrada[0].length;
             if (largura < 3) {
@@ -59,9 +64,8 @@ public class Filtro {
             int[][] entrada = imagem.getPixels();
 
             int altura = entrada.length;
-            if (altura < 3) {
-                throw new IllegalStateException("altura pequena");
-            }
+
+            alturaPequena(altura);
 
             int largura = entrada[0].length;
             if (largura < 3) {
@@ -104,9 +108,8 @@ public class Filtro {
             int[][] entrada = imagem.getPixels();
 
             int altura = entrada.length;
-            if (altura < 3) {
-                throw new IllegalStateException("altura pequena");
-            }
+
+            alturaPequena(altura);
 
             int largura = entrada[0].length;
             if (largura < 3) {
@@ -149,9 +152,8 @@ public class Filtro {
             int[][] entrada = imagem.getPixels();
 
             int altura = entrada.length;
-            if (altura < 3) {
-                throw new IllegalStateException("altura pequena");
-            }
+
+            alturaPequena(altura);
 
             int largura = entrada[0].length;
             if (largura < 3) {
