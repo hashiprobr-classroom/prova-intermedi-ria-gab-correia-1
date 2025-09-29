@@ -41,28 +41,24 @@ public class Data extends Momento{
         return dia;
     }
 
-    public void atualiza(int hora, int minuto){
-        if (hora < 0 | hora >23){
-            ajusta(hora,0,23);
-        }
-        if (minuto<0| minuto>59){
-            ajusta(minuto,0,59);
-        }
+    public void atualiza(int novoDia, int novoMes , int novoAno){
+        this.dia = ajusta(novoDia,1 , limite.get(ajusta(novoMes,1,12)));
+        this.mes = ajusta(novoMes,1,12);
+        this.ano = ajusta(novoAno,1970,2070);
     }
 
     @Override
     public int minuto() {
         int dias=0;
-        int x=0;
         int a = (ano - 1970)*365*24*60;
         for (int m: limite.keySet()) {
-            if (mes < m){
+            if (m > mes){
+                break;
+            }
+            if (m < mes){
                 dias += limite.get(m);
             }
-            if (mes == m){
-                x = limite.get(m) - dia;
-            }
         }
-        return a + dias*24*60 + x*24*60  ;
+        return a + dias*24*60 + (dia-1)*24*60  ;
     }
 }
