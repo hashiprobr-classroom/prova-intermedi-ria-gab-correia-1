@@ -1,6 +1,5 @@
 package br.edu.insper.desagil.pi.freela;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -27,11 +26,6 @@ public class TarefaTest {
 
     @Test
     void momentosValidos() {
-        Tarefa t = new Tarefa(3);
-        Momento m1 = mock(Momento.class);
-        when(m1.minuto()).thenReturn(10);
-        Momento m2 = mock(Momento.class);
-        when(m2.minuto()).thenReturn(20);
     }
 
     @Test
